@@ -3,8 +3,8 @@ subtitle: Software Engineer
 description: >- # this means to ignore newlines until "baseurl:"
   Software Engineer, passionate and self-managed, love automating any boring stuff
 
-# url: "https://sameer-j.github.io"
-url: "http://localhost:4000"
+url: "https://sameer-j.github.io"
+# url: "http://localhost:4000" # for local development
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Navigation
