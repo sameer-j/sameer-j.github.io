@@ -63,7 +63,63 @@ First we need to setup splash screen on native android side. Splash screen on An
    </style>
    ....
    ```
-5.
+5. Create a "SplashActivity.java" at `android/app/src/main/java/com/rnsplashscreendemo/SplashActivity.java` with following code:
+
+   ```java
+   package com.rnsplashscreendemo;
+
+   import android.content.Intent;
+   import android.os.Bundle;
+   import androidx.appcompat.app.AppCompatActivity;
+
+   public class SplashActivity extends AppCompatActivity {
+       @Override
+       protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+
+           Intent intent = new Intent(this, MainActivity.class);
+           startActivity(intent);
+           finish();
+       }
+   }
+   ```
+6. Add the above created SplashActivity with SplashTheme in the AndroidManifest.xml file. The final file looks like below. **Carefully notice the changes in MainActivity activity.**
+
+   ```xml
+   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="com.samrintech.quotedelight">
+
+       <uses-permission android:name="android.permission.INTERNET" />
+
+       <application
+         android:name=".MainApplication"
+         android:label="@string/app_name"
+         android:icon="@mipmap/ic_launcher"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:allowBackup="false"
+         android:theme="@style/AppTheme">
+         <activity
+             android:name=".SplashActivity"
+             android:theme="@style/SplashTheme"
+             android:label="@string/app_name">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+         <activity
+           android:name=".MainActivity"
+           android:label="@string/app_name"
+           android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+           android:launchMode="singleTask"
+           android:windowSoftInputMode="adjustResize"
+           android:exported="true">
+         </activity>
+       </application>
+   </manifest>
+
+   ```
+7. Thats it! run the app and check the splash screen.
 
 #### Reference
 
