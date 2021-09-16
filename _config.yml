@@ -9,16 +9,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
-    - text: Home
-      url: /
-    - text: About
-      url: /about
-    - text: Blog
-      url: /blog
-    - text: Projects
-      # url: /projects
-      url: https://github.com/sameer-j
-
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  - text: Blog
+    url: /blog
+  - text: Projects
+    url: /projects
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
@@ -32,33 +30,33 @@ typewrite-text: Software Engineer with 5+ years of experience. Currently looking
 
 # Experiences
 author_work_experiences:
-            - company_name: RSA
-              company_logo: RSA_Security_logo2.svg.png
-              company_url: https://www.rsa.com/
-              designation: Software Senior Engineer
-              description: Worked on Netwitness Platform product
-              visibility: true
-            - company_name: Persistent Systems
-              company_logo: Persistent_Systems_Logo.jpg
-              company_url: https://www.persistent.com/
-              designation: Software Engineer
-              description: Worked on major client products
-              visibility: true
+  - company_name: RSA
+    company_logo: RSA_Security_logo2.svg.png
+    company_url: https://www.rsa.com/
+    designation: Software Senior Engineer
+    description: Worked on Netwitness Platform product
+    visibility: true
+  - company_name: Persistent Systems
+    company_logo: Persistent_Systems_Logo.jpg
+    company_url: https://www.persistent.com/
+    designation: Software Engineer
+    description: Worked on major client products
+    visibility: true
 
 # Education
 author_education_details:
-              - college_logo: mit.jpg
-                college_name: Manipal Institue of Technology
-                college_url: https://manipal.edu/mit.html
-                college_degree: Computer Science and Engineering
-                description: Master of Technology
-                visibility: true
-              - college_logo: gec.png
-                college_name: Goa College of Engineering
-                college_url: http://www.gec.ac.in/
-                college_degree: Computer Engineering
-                description: Bachelor of Engineering
-                visibility: true
+  - college_logo: mit.jpg
+    college_name: Manipal Institue of Technology
+    college_url: https://manipal.edu/mit.html
+    college_degree: Computer Science and Engineering
+    description: Master of Technology
+    visibility: true
+  - college_logo: gec.png
+    college_name: Goa College of Engineering
+    college_url: http://www.gec.ac.in/
+    college_degree: Computer Engineering
+    description: Bachelor of Engineering
+    visibility: true
 
 # Projects
 # author_project_details:
@@ -75,7 +73,7 @@ author_education_details:
 
 # social links
 twitter_username: _sameer_j
-github_username:  sameer-j
+github_username: sameer-j
 linkedin_username: sameer-j
 
 #for comments ( we got Disqus and Hyvor Commenting, uncomment the one you want to use )
@@ -135,13 +133,11 @@ paginate_path: "/blog/page/:num/"
 #     output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "gallery"
     values:
       permalink: /:path/:basename:output_ext
-  -
-    scope:
+  - scope:
       path: ""
       type: authors
     values:
@@ -166,7 +162,6 @@ jekyll_admin:
   #   - datafiles
   #   - configuration
   homepage: "posts"
-
 
 # Exclude from processing.
 # The following items will not be processed, by default.
