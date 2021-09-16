@@ -18,8 +18,14 @@ In simplest words, splash screen is like a starting screen of your mobile app th
 
 ***\[Splash screen GIF here]***
 
-This is a common thing in apps, be it native apps in android or ios and hybrid apps using react native, cordova etc. It acts as a dummy screen to show your user while it takes time to startup. You can choose to add a nice animation for it. 
+This is a common thing in apps, be it native apps in android or ios and hybrid apps using React Native, Cordova etc. It acts as a dummy screen to show your user while it takes time to startup. You can choose to add a nice animation for it. 
 
 In this tutorial I will show how to add splash screen in a react native app, for android specifically.
 
 ## Setting splash screen on Android
+
+## Handling splash screen flash for react native apps
+
+
+
+Code for this tutorial is available at
