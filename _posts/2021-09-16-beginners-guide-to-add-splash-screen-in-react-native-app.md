@@ -47,10 +47,14 @@ First we need to setup splash screen on native android side. Splash screen on An
        <item
            android:layout_width="match_parent"
            android:layout_height="match_parent"
+           android:width="200dp"
+           android:height="200dp"
            android:drawable="@drawable/splash"
            android:gravity="center" />
+       <!-- use this if ur splash image is already of right size
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" -->
    </layer-list>
-
    ```
 4. Create a new "SplashTheme" style in "`android/app/src/main/res/values/styles.xml"` :
 
@@ -117,22 +121,86 @@ First we need to setup splash screen on native android side. Splash screen on An
          </activity>
        </application>
    </manifest>
-
    ```
 7. Thats it! run the app and check the splash screen.
 
-#### Reference
+***\[Splash screen GIF here]***[](https://medium.com/geekculture/implementing-the-perfect-splash-screen-in-android-295de045a8dc)
 
-* [Implementing the Perfect Splash Screen in Android](https://medium.com/geekculture/implementing-the-perfect-splash-screen-in-android-295de045a8dc)
+See that white flash between your splash screen and home page?
 
-See that white flash between your splash screen and home page? Thats the time ...
+## Handling splash screen white flash for react native apps
 
-## Handling splash screen flash for react native apps
+**Note:** The flash can be grey in color if dark mode is enabled in the phone
 
+That white flash screen between splash screen and home screen is because of javascript loading. 
 
+To fix that we use "**react-native-splash-screen"** package.
+
+Follow these steps:
+
+1. add the package: `yarn add react-native-splash-screen`
+2. Modify **MainActivity.java**
+
+   ```java
+   package com.rnsplashscreendemo; // change this as per your package
+
+   import com.facebook.react.ReactActivity;
+   import org.devio.rn.splashscreen.SplashScreen; // add this
+   import android.os.Bundle; // add this
+
+   public class MainActivity extends ReactActivity {
+
+     /**
+      * Returns the name of the main component registered from JavaScript. This is used to schedule
+      * rendering of the component.
+      */
+     @Override
+     protected String getMainComponentName() {
+       return "RNSplashScreenDemo";
+     }
+
+     // add this function
+     @Override 
+     protected void onCreate(Bundle savedInstanceState) {
+         SplashScreen.show(this);
+         super.onCreate(savedInstanceState);
+     }
+   }
+
+   ```
+3. Don't forget to hide the SplashScreen when react native app loads! Modify your **App.js** file like this:
+
+   ```javascript
+   import React, {useEffect} from 'react';
+   import SplashScreen from 'react-native-splash-screen';
+
+   const App: () => Node = () => {
+     useEffect(() => {
+       SplashScreen.hide();
+     });
+     
+   ....
+   }
+   ```
+4. Next we need to setup the splash screen for react-native side. Create **"launch_screen.xml" (exact name)** file in `res/layout/` folder with following content:
+
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@drawable/background_splash"
+       android:orientation="vertical">
+   </LinearLayout>
+
+   ```
+5. Thats it! This time truly!
+
+![Final Splash Scren](/assets/img/posts/splash-final.gif "Final Splash Screen")
 
 ## Troubleshooting common issues
 
+* Careful with the java package name and file name while using this tutorial. Don't blindly copy-paste the code!
 * jest tests failing with "Cannot use import statement outside a module" or "Cannot read property 'hide' of undefined"
 
   * as "react-native-splash-screen" is a native plugin, its not available during jest test run. You need to mock the library in your test file.
@@ -147,6 +215,9 @@ See that white flash between your splash screen and home page? Thats the time ..
     \
     Reference: <https://github.com/crazycodeboy/react-native-splash-screen/issues/166#issuecomment-362774112>
 
-Code for this tutorial is available at <https://github.com/sameer-j/RNSplashScreenDemo>
+Code for this tutorial is available at [RNSplashScreenDemo](https://github.com/sameer-j/RNSplashScreenDemo)
 
-References:
+**References:**
+
+* [Implementing the Perfect Splash Screen in Android](https://medium.com/geekculture/implementing-the-perfect-splash-screen-in-android-295de045a8dc)
+* [How to Add a Splash Screen to a React Native App (iOS and Android)](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
