@@ -3,7 +3,7 @@ layout: post
 author: Sameer
 title: Beginners guide to add splash screen in react native app
 date: 2021-09-16T14:15:41.128Z
-thumbnail-img: /assets/img/posts/react_native_logo.png
+thumbnail-img: /assets/img/posts/react_native_logo.jpg
 category: react native
 summary: Simplest steps to add splash screen on a react native app
 keywords: reactnative splashscreen
