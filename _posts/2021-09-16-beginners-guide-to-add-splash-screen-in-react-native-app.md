@@ -7,7 +7,7 @@ thumbnail-img: /assets/img/posts/react_native_logo.jpg
 category: react native
 summary: Simplest steps to add splash screen on a react native app
 keywords: reactnative splashscreen
-thumbnail: /assets/img/posts/react_native_logo.jpg
+thumbnail: assets/img/posts/react_native_logo.jpg
 permalink: /blog/react-native-splash-screen/
 ---
 In this tutorial I will show how to add splash screen in a react native app, for android specifically. Last tested with react native v0.65.
