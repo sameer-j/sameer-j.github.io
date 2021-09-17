@@ -16,7 +16,7 @@ In this tutorial I will show how to add splash screen in a react native app, for
 
 In simplest words, splash screen is like a starting screen of your mobile app that shows up just before the first screen of your app shows up. 
 
-***\[Splash screen GIF here]***
+![Final Splash Screen](/assets/img/posts/splash-final.gif "Final Splash Screen")
 
 This is a common thing in apps, be it native apps in android or ios and hybrid apps using React Native, Cordova etc. It acts as a dummy screen to show your user while it takes time to startup. You can choose to add a nice animation for it. 
 
@@ -28,7 +28,7 @@ First we need to setup splash screen on native android side. Splash screen on An
 
 1. First, get a splash screen image for your app and copy it in the following location\
    `"android/app/src/main/res/drawable/splash.png"`. Create "drawable" folder if it doesn't exist.
-2. reate a color for the background in "`android/app/src/main/res/values/colors.xml"` file with following code:
+2. create a color for the background in "`android/app/src/main/res/values/colors.xml"` file with following code:
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -124,7 +124,7 @@ First we need to setup splash screen on native android side. Splash screen on An
    ```
 7. Thats it! run the app and check the splash screen.
 
-***\[Splash screen GIF here]***[](https://medium.com/geekculture/implementing-the-perfect-splash-screen-in-android-295de045a8dc)
+![Android Splash Screen](/assets/img/posts/splash-android.gif "Android Splash Screen")
 
 See that white flash between your splash screen and home page?
 
